@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_11_10_181621) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_10_185734) do
   create_table "elixirs", force: :cascade do |t|
     t.string "name"
     t.text "effect"
     t.string "difficulty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "spell_id", null: false
+    t.index ["spell_id"], name: "index_elixirs_on_spell_id"
   end
 
   create_table "spells", force: :cascade do |t|
@@ -28,4 +30,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_10_181621) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "elixirs", "spells"
 end
