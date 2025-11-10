@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  incantation: MyString
+  effect: MyText
+  spell_type: MyString
+  light: MyString
+
+two:
+  name: MyString
+  incantation: MyString
+  effect: MyText
+  spell_type: MyString
+  light: MyString
