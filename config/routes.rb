@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get "elixirs/index"
+  get "elixirs/show"
+  get "spells/index"
+  get "spells/show"
+  get "pages/about"
+  get "pages/home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,4 +17,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root "pages#home"
+  get "about", to: "pages#about"
+  resources :spells, only: [ :index, :show ]
+  resources :elixirs, only: [ :index, :show ]
 end

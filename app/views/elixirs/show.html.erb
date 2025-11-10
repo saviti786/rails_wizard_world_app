@@ -1,0 +1,16 @@
+<div class="card mt-4 p-4 shadow-sm">
+  <h2><%= @elixir.name %></h2>
+
+  <p><strong>Effect:</strong> <%= @elixir.effect.presence || "No effect listed" %></p>
+  <p><strong>Difficulty:</strong> <%= @elixir.difficulty.presence || "Unknown" %></p>
+
+  <% if @elixir.spell.present? %>
+    <p><strong>Associated Spell:</strong>
+      <%= link_to @elixir.spell.name, @elixir.spell, class: "text-decoration-none" %>
+    </p>
+  <% else %>
+    <p><em>No spell linked to this elixir.</em></p>
+  <% end %>
+
+  <%= link_to "← Back to All Elixirs", elixirs_path, class: "btn btn-secondary mt-3" %>
+</div>

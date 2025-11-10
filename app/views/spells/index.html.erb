@@ -1,0 +1,18 @@
+<h1>All Spells</h1>
+
+<div class="mb-4">
+  <%= form_with url: spells_path, method: :get, local: true do %>
+    <div class="input-group">
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search spells..." %>
+      <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+  <% end %>
+</div>
+
+<ul>
+  <% @spells.each do |spell| %>
+    <li>
+      <%= link_to spell.name, spell %> – <%= spell[:type] %>
+    </li>
+  <% end %>
+</ul>
